@@ -30,12 +30,14 @@
             android:id="@+id/button_LoggerList1"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:onClick="viewList"/>
         <Button
             android:id="@+id/button_LoggerPlus1"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:onClick="addEvent"/>
 
         <Switch
             android:gravity="center"
@@ -62,12 +64,14 @@
             android:id="@+id/button_LoggerList2"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:onClick="viewList"/>
         <Button
             android:id="@+id/button_LoggerPlus2"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:onClick="addEvent"/>
 
         <Switch
             android:gravity="center"
@@ -94,12 +98,14 @@
             android:id="@+id/button_LoggerList3"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:onClick="viewList"/>
         <Button
             android:id="@+id/button_LoggerPlus3"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:onClick="addEvent"/>
 
         <Switch
             android:gravity="center"
@@ -126,12 +132,14 @@
             android:id="@+id/button_LoggerList4"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:onClick="viewList"/>
         <Button
             android:id="@+id/button_LoggerPlus4"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:onClick="addEvent"/>
 
         <Switch
             android:gravity="center"
@@ -158,12 +166,14 @@
             android:id="@+id/button_LoggerList5"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:onClick="viewList"/>
         <Button
             android:id="@+id/button_LoggerPlus5"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:onClick="addEvent"/>
 
         <Switch
             android:gravity="center"

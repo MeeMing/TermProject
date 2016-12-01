@@ -33,12 +33,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".AlarmActivity"/>
         <activity android:name=".AlarmAddActivity"/>
         <activity android:name=".LoggerActivity"/>
+        <activity android:name=".LoggerListActivity"/>
+        <activity android:name=".LoggerEventActivity"/>
         <activity android:name=".GoalActivity"/>
+        <activity android:name=".GoalAddActivity"/>
         <activity android:name=".AnalysisTimeActivity"/>
         <activity android:name=".AnalysisMapActivity"/>
+
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyBrPVWKTvUmau9aRLrHeJip-_6x1q47UyU"/>
