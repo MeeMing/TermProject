@@ -85,4 +85,13 @@
         android:layout_below="@+id/editText2"
         android:layout_toStartOf="@+id/editText2" />
 
+    <Button
+        android:text="추가"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkBox3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="33dp"
+        android:id="@+id/button_addalarm" />
+
 </RelativeLayout>
