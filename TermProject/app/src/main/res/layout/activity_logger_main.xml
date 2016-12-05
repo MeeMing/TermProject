@@ -28,20 +28,15 @@
             android:gravity="center"/>
         <Button
             android:id="@+id/button_LoggerList1"
+            android:background="@drawable/list"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:gravity="center"
             android:onClick="viewList"/>
-        <Button
-            android:id="@+id/button_LoggerPlus1"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:gravity="center"
-            android:onClick="addEvent"/>
 
         <Switch
             android:gravity="center"
-            android:layout_width="wrap_content"
+            android:layout_width="77dp"
             android:layout_height="wrap_content"
             android:id="@+id/switch_LoggerOnOff1" />
 
@@ -62,20 +57,15 @@
             android:gravity="center"/>
         <Button
             android:id="@+id/button_LoggerList2"
+            android:background="@drawable/list"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:gravity="center"
             android:onClick="viewList"/>
-        <Button
-            android:id="@+id/button_LoggerPlus2"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:gravity="center"
-            android:onClick="addEvent"/>
 
         <Switch
             android:gravity="center"
-            android:layout_width="wrap_content"
+            android:layout_width="77dp"
             android:layout_height="wrap_content"
             android:id="@+id/switch_LoggerOnOff2" />
 
@@ -96,20 +86,15 @@
             android:gravity="center"/>
         <Button
             android:id="@+id/button_LoggerList3"
+            android:background="@drawable/list"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:gravity="center"
             android:onClick="viewList"/>
-        <Button
-            android:id="@+id/button_LoggerPlus3"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:gravity="center"
-            android:onClick="addEvent"/>
 
         <Switch
             android:gravity="center"
-            android:layout_width="wrap_content"
+            android:layout_width="77dp"
             android:layout_height="wrap_content"
             android:id="@+id/switch_LoggerOnOff3" />
 
@@ -130,20 +115,15 @@
             android:gravity="center"/>
         <Button
             android:id="@+id/button_LoggerList4"
+            android:background="@drawable/list"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:gravity="center"
             android:onClick="viewList"/>
-        <Button
-            android:id="@+id/button_LoggerPlus4"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:gravity="center"
-            android:onClick="addEvent"/>
 
         <Switch
             android:gravity="center"
-            android:layout_width="wrap_content"
+            android:layout_width="77dp"
             android:layout_height="wrap_content"
             android:id="@+id/switch_LoggerOnOff4" />
 
@@ -164,20 +144,15 @@
             android:gravity="center"/>
         <Button
             android:id="@+id/button_LoggerList5"
+            android:background="@drawable/list"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:gravity="center"
             android:onClick="viewList"/>
-        <Button
-            android:id="@+id/button_LoggerPlus5"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:gravity="center"
-            android:onClick="addEvent"/>
 
         <Switch
             android:gravity="center"
-            android:layout_width="wrap_content"
+            android:layout_width="77dp"
             android:layout_height="wrap_content"
             android:id="@+id/switch_LoggerOnOff5" />
 
