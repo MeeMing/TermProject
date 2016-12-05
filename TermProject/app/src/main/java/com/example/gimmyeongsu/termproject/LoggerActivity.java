@@ -23,8 +23,4 @@ public class LoggerActivity extends AppCompatActivity {
         startActivity(viewlist);
     }
 
-    public void addEvent(View view) {
-        Intent addevent = new Intent(getApplicationContext(), LoggerEventActivity.class);
-        startActivity(addevent);
-    }
 }
