@@ -59,9 +59,9 @@ public class GoalDBManager extends SQLiteOpenHelper {
                     + " , 주제:" + cursor.getString(2) + "\n"
                     + "내용:" + cursor.getString(3) + "\n"
                     + "날짜:" + cursor.getString(4) + ", 시간:" + cursor.getString(5) + "\n";
-            if(cursor.getInt(6)==0){
+            if(cursor.getInt(6)==1){
                 str += "기한 : " + cursor.getInt(7);
-                if(cursor.getInt(8)==0){
+                if(cursor.getInt(8)==1){
                     str += " 이하\n";
                 }
                 else{

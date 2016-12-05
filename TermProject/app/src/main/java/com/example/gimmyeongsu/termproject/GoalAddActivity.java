@@ -2,6 +2,7 @@ package com.example.gimmyeongsu.termproject;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -116,6 +117,13 @@ public class GoalAddActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                String input_title = title.getText().toString();
+                String input_group = group.getText().toString();
+                String input_context = context.getText().toString();
+                String input_date = date.getText().toString();
+                String input_time = time.getText().toString();
+
+
                 int check_limit = limit.isChecked()?1:0;
                 int limitTime = 0;
                 if(!goalTime.getText().toString().equals("")){
@@ -123,14 +131,34 @@ public class GoalAddActivity extends AppCompatActivity {
                 }
                 int check_updown = ((check_limit==1)&&(iTem[0].equals("이하")))?1:0;
 
+                AlertDialog.Builder dialog = new AlertDialog.Builder(GoalAddActivity.this);
+                dialog.setTitle("입력 오류");
+                dialog.setPositiveButton("확인", new DialogInterface.OnClickListener(){
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                });
+                String error_Message = "";
+                int error_check = 0;
+
+                if(input_title.equals("")||input_group.equals("")||input_context.equals("")){
+                    error_Message+= "입력값을 입력하지 않았습니다.\n" +
+                            "입력값을 입력해 주세요\n";
+                    error_check=1;
+                }
                 if((check_limit==1)&&(limitTime==0)){
-                    AlertDialog.Builder dialog = new AlertDialog.Builder(GoalAddActivity.this);
-                    dialog.setTitle("입력 오류");
-                    dialog.setMessage("기한없을을 체크하셨습니다.\n" +
-                            "시간값을 입력해 주세요.\n");
+                    error_Message+="기한없을을 체크하셨습니다.\n" +
+                            "시간값을 입력해 주세요.\n";
+                    error_check=1;
+                }
+
+                if(error_check==1){
+                    dialog.setMessage(error_Message);
+                    dialog.show();
                 }
                 else{
-                    
+
                     /*Toast.makeText(getApplicationContext(), title.getText().toString()+"\n" +
                             group.getText().toString()+"\n" +
                             context.getText().toString()+"\n" +
@@ -140,11 +168,6 @@ public class GoalAddActivity extends AppCompatActivity {
                             Integer.toString(limitTime)+"\n" +
                             Integer.toString(check_updown), Toast.LENGTH_LONG).show();*/
 
-                    String input_title = title.getText().toString();
-                    String input_group = group.getText().toString();
-                    String input_context = context.getText().toString();
-                    String input_date = date.getText().toString();
-                    String input_time = time.getText().toString();
 
                     goalDBManager.insert(input_title, input_group, input_context,
                             input_date, input_time,
