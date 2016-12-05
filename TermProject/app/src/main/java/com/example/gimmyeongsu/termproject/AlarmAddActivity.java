@@ -41,11 +41,11 @@ public class AlarmAddActivity extends AppCompatActivity{
         final AlarmDBManager alarmDBManager = new AlarmDBManager(getApplicationContext(), "ALARM.db", null, 1);
 
         df = new SimpleDateFormat("yyyy-MM-dd-HH-mm", Locale.KOREA);
-        final String today_year = df.format(new Date()).split("-")[0];
-        final String today_month = twoLength(df.format(new Date()).split("-")[1]);
-        final String today_day = twoLength(df.format(new Date()).split("-")[2]);
-        final String today_hour = twoLength(df.format(new Date()).split("-")[3]);
-        final String today_minute = twoLength(df.format(new Date()).split("-")[4]);
+        final String today_year = df.format(new Date(System.currentTimeMillis())).split("-")[0];
+        final String today_month = twoLength(df.format(new Date(System.currentTimeMillis())).split("-")[1]);
+        final String today_day = twoLength(df.format(new Date(System.currentTimeMillis())).split("-")[2]);
+        final String today_hour = twoLength(df.format(new Date(System.currentTimeMillis())).split("-")[3]);
+        final String today_minute = twoLength(df.format(new Date(System.currentTimeMillis())).split("-")[4]);
 
 
         editText_date = (TextView)findViewById(R.id.editText1);
@@ -81,9 +81,6 @@ public class AlarmAddActivity extends AppCompatActivity{
             public void onClick(View v){
                 int check_loop = checkBox_loop.isChecked()?1:0;
                 int check_hardmode = checkBox_hardmode.isChecked()?1:0;
-                //alarmDBManager.inset("insert into Alarm_List values(null, " + editText_date.getText().toString() + ", " + editText_time.getText().toString() + ", " + Integer.toString(check_loop) + ", " +Integer.toString(check_hardmode) + ");");
-                //alarmDBManager.inset("insert into ALARM_LIST values(null, '" + "123-123_123" + "', '" + "123_123" + "', " + Integer.toString(check_loop) + ", " +Integer.toString(check_hardmode) + ");");
-                //Toast.makeText(getApplicationContext(), "insert into Alarm_List values(null, " + editText_date.getText().toString() + ", " + editText_time.getText().toString() + ", " + Integer.toString(check_loop) + ", " +Integer.toString(check_hardmode) + ");", Toast.LENGTH_LONG).show();
                 alarmDBManager.insert(editText_date.getText().toString(), editText_time.getText().toString(), check_loop, check_hardmode);
                 finish();
                 Intent alarm = new Intent(getApplicationContext(), AlarmActivity.class);

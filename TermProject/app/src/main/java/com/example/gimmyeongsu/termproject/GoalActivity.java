@@ -24,6 +24,7 @@ public class GoalActivity extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
+                finish();
                 Intent goaladd = new Intent(getApplicationContext(), GoalAddActivity.class);
                 startActivity(goaladd);
             }
