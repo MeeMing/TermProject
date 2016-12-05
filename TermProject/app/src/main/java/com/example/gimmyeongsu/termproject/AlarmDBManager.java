@@ -1,5 +1,6 @@
 package com.example.gimmyeongsu.termproject;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -18,7 +19,7 @@ public class AlarmDBManager extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL("CREATE TABLE ALARM_LIST( _id INTEGER PRIMARY KEY AUTOINCREMENT, date INTEGER, time INTEGER, check_loop INTEGER, check_hardmode INTEGER);");
+        sqLiteDatabase.execSQL("CREATE TABLE ALARM_LIST( _id INTEGER PRIMARY KEY AUTOINCREMENT, date TEXT, time TEXT, check_loop INTEGER, check_hardmode INTEGER);");
     }
 
     @Override
@@ -26,9 +27,15 @@ public class AlarmDBManager extends SQLiteOpenHelper {
 
     }
 
-    public void inset(String table){
+    public void insert(String date, String time, int check_loop, int check_hardmode){
         SQLiteDatabase db = getWritableDatabase();
-        db.execSQL(table);
+        ContentValues values = new ContentValues();
+
+        values.put("date", date);
+        values.put("time", time);
+        values.put("check_loop", check_loop);
+        values.put("check_hardmode", check_hardmode);
+        db.insert("ALARM_LIST",null,values);
         db.close();
     }
 
@@ -52,10 +59,10 @@ public class AlarmDBManager extends SQLiteOpenHelper {
         while(cursor.moveToNext()) {
             str += cursor.getInt(0)
                     + " : Date = "
-                    + cursor.getInt(1)
+                    + cursor.getString(1)
                     + ", time = "
-                    + cursor.getInt(2)
-                    + ", " + cursor.getInt(3) + ", " + cursor.getInt(4)
+                    + cursor.getString(2)
+                    + "     " + cursor.getInt(3) + ", " + cursor.getInt(4)
                     + "\n";
         }
 

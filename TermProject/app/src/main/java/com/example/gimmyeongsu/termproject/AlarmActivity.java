@@ -25,7 +25,7 @@ public class AlarmActivity extends AppCompatActivity{
         setContentView(R.layout.activity_alram);
 
 
-        final AlarmDBManager alarmDBManager = new AlarmDBManager(getApplicationContext(), "Alarm.db", null, 1);
+        final AlarmDBManager alarmDBManager = new AlarmDBManager(getApplicationContext(), "ALARM.db", null, 1);
 
 
         textView_sample = (TextView)findViewById(R.id.textView_sample);
