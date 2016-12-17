@@ -6,6 +6,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+
 /**
  * Created by TaeWoo on 2016-12-05.
  */
@@ -79,6 +82,37 @@ public class LoggerDBManager extends SQLiteOpenHelper {
         }
         return str;
     }
+
+
+    public int getTableNumber(){
+        int num=0;
+        SQLiteDatabase db = getWritableDatabase();
+        Cursor cursor = db.rawQuery("select * from LOGGER_LIST", null);
+        while(cursor.moveToNext()){
+            num++;
+        }
+        return num;
+    }
+
+
+
+    public MarkerOptions[] getMarkers(){
+        MarkerOptions[] markers = new MarkerOptions[getTableNumber()];
+        SQLiteDatabase db = getWritableDatabase();
+        Cursor cursor = db.rawQuery("select * from LOGGER_LIST", null);
+        int i=0;
+        while(cursor.moveToNext()){
+            String[] location = cursor.getString(4).split(",");
+            LatLng marker = new LatLng(Double.parseDouble(location[0]),Double.parseDouble(location[1]));
+            markers[i] = new MarkerOptions().snippet(cursor.getString(1)).position(marker).title(cursor.getString(2));
+
+        }
+
+
+
+        return markers;
+    }
+
 
     public void Delete(int id){
         SQLiteDatabase db = getWritableDatabase();

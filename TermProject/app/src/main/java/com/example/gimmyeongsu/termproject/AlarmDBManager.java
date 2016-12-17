@@ -69,6 +69,21 @@ public class AlarmDBManager extends SQLiteOpenHelper {
         return str;
     }
 
+
+
+    public int getTableNumber(){
+        int num=0;
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("select * from ALARM_LIST", null);
+        while(cursor.moveToNext()) {
+            num++;
+        }
+
+
+
+        return num;
+    }
+
     public void deleteDB(){
         SQLiteDatabase db = getWritableDatabase();
         db.execSQL("delete from ALARM_LIST");
