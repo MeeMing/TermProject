@@ -54,7 +54,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/button1"
-                    android:text="Button1"
+                    android:text="ADD"
                     android:layout_column="2"/>
             </TableRow>
 
@@ -93,13 +93,13 @@
                     android:id="@+id/textView_Blank1" />
 
                 <Button
-                    android:text="Button2"
+                    android:text="Modify"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/button2" />
 
                 <Button
-                    android:text="Button3"
+                    android:text="Delete"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/button3"
