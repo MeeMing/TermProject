@@ -19,9 +19,22 @@
             android:layout_alignParentStart="true" />
     </RelativeLayout>
 
-    <ListView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="300dp"></ListView>
+        android:layout_height="300dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:text="TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView_list" />
+        </LinearLayout>
+    </ScrollView>
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -33,13 +46,18 @@
             android:layout_height="wrap_content"
             android:textSize="30dp"
             android:hint="Num"
-            android:gravity="center"/>
+            android:inputType="numberDecimal"
+            android:gravity="center"
+            android:id="@+id/edit_loggerNum"/>
 
         <Button
             android:background="@drawable/delete"
             android:layout_width="50dp"
-            android:layout_height="50dp" />
+            android:layout_height="50dp"
+            android:id="@+id/button_delete"
+            android:onClick="deleteEvent"/>
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="70dp"

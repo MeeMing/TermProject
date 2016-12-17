@@ -38,7 +38,8 @@
             android:gravity="center"
             android:layout_width="77dp"
             android:layout_height="wrap_content"
-            android:id="@+id/switch_LoggerOnOff1" />
+            android:id="@+id/switch_LoggerOnOff1"
+            android:onClick="startLogger"/>
 
     </LinearLayout>
 
@@ -67,7 +68,8 @@
             android:gravity="center"
             android:layout_width="77dp"
             android:layout_height="wrap_content"
-            android:id="@+id/switch_LoggerOnOff2" />
+            android:id="@+id/switch_LoggerOnOff2"
+            android:onClick="startLogger"/>
 
     </LinearLayout>
 
@@ -96,7 +98,8 @@
             android:gravity="center"
             android:layout_width="77dp"
             android:layout_height="wrap_content"
-            android:id="@+id/switch_LoggerOnOff3" />
+            android:id="@+id/switch_LoggerOnOff3"
+            android:onClick="startLogger"/>
 
     </LinearLayout>
 
@@ -125,7 +128,8 @@
             android:gravity="center"
             android:layout_width="77dp"
             android:layout_height="wrap_content"
-            android:id="@+id/switch_LoggerOnOff4" />
+            android:id="@+id/switch_LoggerOnOff4"
+            android:onClick="startLogger"/>
 
     </LinearLayout>
 
@@ -154,7 +158,8 @@
             android:gravity="center"
             android:layout_width="77dp"
             android:layout_height="wrap_content"
-            android:id="@+id/switch_LoggerOnOff5" />
+            android:id="@+id/switch_LoggerOnOff5"
+            android:onClick="startLogger"/>
 
     </LinearLayout>
 

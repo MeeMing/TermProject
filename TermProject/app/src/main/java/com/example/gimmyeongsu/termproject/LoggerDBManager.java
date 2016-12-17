@@ -2,6 +2,7 @@ package com.example.gimmyeongsu.termproject;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -18,7 +19,7 @@ public class LoggerDBManager extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL("CREATE TABLE ALARM_LIST( _id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT, content TEXT, pic TEXT, coordinate INTEGER, time_start INTEGER, time_during INTEGER, time_end INTEGER");
+        sqLiteDatabase.execSQL("CREATE TABLE LOGGER_LIST( _id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT, content TEXT, pic TEXT, coordinate TEXT, time_start INTEGER, time_end INTEGER);");
     }
 
     @Override
@@ -26,7 +27,7 @@ public class LoggerDBManager extends SQLiteOpenHelper {
 
     }
 
-    public void insert(String title, String content, String pic, int coordinate, int time_start, int time_during, int time_end ) {
+    public void insert(String title, String content, String pic, String coordinate, String time_start, int time_end ) {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues values = new ContentValues();
 
@@ -35,7 +36,6 @@ public class LoggerDBManager extends SQLiteOpenHelper {
         values.put("pic", pic);
         values.put("coordinate", coordinate);
         values.put("time_start", time_start);
-        values.put("time_during", time_during);
         values.put("time_end", time_end);
         db.insert("LOGGER_LIST",null,values);
         db.close();
@@ -46,6 +46,43 @@ public class LoggerDBManager extends SQLiteOpenHelper {
         SQLiteDatabase db = getWritableDatabase();
         db.execSQL(table);
         db.close();
+    }
+
+    public String PrintData(){
+        SQLiteDatabase db = getWritableDatabase();
+        String str="";
+
+        Cursor cursor = db.rawQuery("select * from LOGGER_LIST", null);
+        while(cursor.moveToNext()){
+            str += cursor.getInt(0)
+                    + " : 주제:" + cursor.getString(1)
+                    + " , 내용:" + cursor.getString(2) + "\n"
+                    + "사진:" + cursor.getString(3) + "\n"
+                    + "위치:" + cursor.getString(4) + ", 시간:" + cursor.getString(5) + "\n";
+        }
+        return str;
+    }
+
+    public String SelectPrintData(String title){
+        SQLiteDatabase db = getWritableDatabase();
+        String str="";
+
+        Cursor cursor = db.rawQuery("select * from LOGGER_LIST", null);
+        while(cursor.moveToNext()){
+            if(cursor.getString(1).equals(title)){
+                str += cursor.getInt(0)
+                        + " : 주제:" + cursor.getString(1)
+                        + " , 내용:" + cursor.getString(2) + "\n"
+                        + "사진:" + cursor.getString(3) + "\n"
+                        + "위치:" + cursor.getString(4) + ", 시간:" + cursor.getString(5) + "\n";
+            }
+        }
+        return str;
+    }
+
+    public void Delete(int id){
+        SQLiteDatabase db = getWritableDatabase();
+        db.delete("LOGGER_LIST","_id=?", new String[]{Integer.toString(id)});
     }
 
 }
