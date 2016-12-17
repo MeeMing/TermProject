@@ -31,12 +31,14 @@
 
         <Button
             android:id="@+id/button_PictureDelete"
+            android:background="@drawable/delete"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:gravity="center"/>
 
         <Button
             android:id="@+id/button_PictureTake"
+            android:background="@drawable/camera"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:gravity="center"/>
