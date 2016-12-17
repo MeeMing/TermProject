@@ -24,7 +24,6 @@ import java.util.GregorianCalendar;
 
 public class AlarmActivity extends AppCompatActivity implements OnDateChangedListener, TimePicker.OnTimeChangedListener {
 
-    Button button_deleteDB;
     Button button_alarmAdd;
     TextView textView_sample;
 
@@ -60,14 +59,7 @@ public class AlarmActivity extends AppCompatActivity implements OnDateChangedLis
         });
 
 
-        button_deleteDB = (Button)findViewById(R.id.button_deleteDB);
-        button_deleteDB.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                alarmDBManager.deleteDB();
-                textView_sample.setText(alarmDBManager.PrintData());
-            }
-        });
+
     }
 
     public void setAlarm(){
